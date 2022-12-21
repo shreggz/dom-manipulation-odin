@@ -34,4 +34,18 @@ const btn2 = document.querySelector('#btn2');
 btn2.onclick = alertFunction;
 
 const btn3 = document.querySelector('#btn3');
-btn3.addEventListener('click', alertFunction);
+btn3.addEventListener('click', function(e) {
+    e.target.style.background = 'blue';
+})
+
+const btn4 = document.querySelector('#btn4');
+btn4.addEventListener('click', function(turnRed) {
+    turnRed.target.style.background = 'red';
+})
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.id);
+    });
+});
